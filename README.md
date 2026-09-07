@@ -12,7 +12,7 @@ A sequence detector is a digital sequential circuit that recognizes a predefined
 The FSM moves through different states based on the incoming bits. Once the complete sequence is detected, the output signal becomes high for one clock cycle. This design demonstrates the complete RTL-to-GLS verification flow using open-source EDA tools.
 A sequence detector is a sequential state machine. It produces a pulse output whenever it detects a predefined sequence. In case of Mealy machine, output is a function of not only the present inputs but also past inputs. In other words, we can say; in Mealy, both output and the next state depends on the present input and the present state. Here I have implemented the Mealy finite state machine sequence detector “101011”.
 
-#### A sequence detector accepts as input a string of bits: either 0 or 1. Its output goes to 1 when a target sequence has been detected. In a sequence detector that allows overlap, the final bits of one sequence can be the start of another sequence. In Mealy, both output and the next state depends on the present input and the present state. For present state S0, if the input is ‘1’ then the next state is S1 and if input ‘0’ then the next state is the current state. It is similar for present state S1. In present state S2 if there is a false bit, the next state is S0 and in present state S3 if there is a false bit, the next state is S1. It can be said that if there is a false input, the next state will be the nearest similar state
+
 ---
 
 # Applications
@@ -91,7 +91,7 @@ The RTL design was synthesized successfully and a gate-level netlist was generat
 <img width="925" height="462" alt="synthesizednetlist" src="https://github.com/user-attachments/assets/912a7fd9-78fd-42bf-a7c4-7c20b6f9a0eb" />
 
 ### Statistics
-<img width="925" height="462" alt="synthesizednetlist" src="https://github.com/user-attachments/assets/d059a188-19ed-4754-bea9-901cf120566d" />
+<img width="498" height="438" alt="Cell Statistics" src="https://github.com/user-attachments/assets/bd42e5d8-85e5-43b2-81e9-b65afefc668d" />
 
 
 ---
@@ -120,11 +120,11 @@ The synthesized netlist was simulated successfully. The generated waveform verif
 # Observation
 
 The Functional Simulation verified the RTL implementation successfully. After synthesis, the generated netlist was validated through Gate Level Simulation using the same testbench. The waveforms observed in GTKWave confirmed the correct functionality of the design throughout the verification flow. The complete design process, including RTL simulation, synthesis, and GLS, was completed successfully.
-Pre level simulation and post level simulation waverforms are matched.
+
 ---
 
 # Conclusion
-
 The Mealy FSM based sequence detector was successfully designed, synthesized, and verified using Verilog HDL. Functional Simulation validated the RTL design, while Gate Level Simulation confirmed the correctness of the synthesized netlist. This project demonstrates the complete digital IC design flow using open-source tools such as Icarus Verilog, GTKWave, and Yosys.
+
 ---
 
